@@ -7,6 +7,7 @@ https://github.com/qlik-oss/core-scaling
 - Install Helm https://helm.sh/docs/using_helm/#installing-the-helm-client
 - Install Prometheus `helm install --name prometheus ./charts/prometheus/ -f ./values/prometheus/values-dev.yaml`
 - Install Grafana `helm install --name grafana ./charts/grafana/`
+- Install Custom Metrics Api Server `helm install --name custom-metrics-apiserver ./charts/custom-metrics-apiserver/`
 
 ### Modifications
 - if you make a change on Prometheus, run `helm upgrade --install prometheus ./charts/prometheus -f ./values/prometheus/values-dev.yaml`
