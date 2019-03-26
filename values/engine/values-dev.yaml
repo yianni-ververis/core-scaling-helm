@@ -1,0 +1,11 @@
+image:
+  args:
+    AcceptEULA: "yes" # change to 'yes' if you accept the Qlik Core EULA
+    DocumentDirectory: /doc
+
+hpa:
+  minReplicas: 1
+  maxReplicas: 2
+  targetAverageValue: 250
+
+read_engine_rules: resource._actions = {"*"}

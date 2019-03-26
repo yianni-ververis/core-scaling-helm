@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: access-control
+data:
+  read_engine_rules.txt: |
+    {{ .Values.read_engine_rules }}
