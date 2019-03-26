@@ -5,6 +5,10 @@ https://github.com/qlik-oss/core-scaling
 
 ### Installation
 - **Helm** https://helm.sh/docs/using_helm/#installing-the-helm-client
+- **Rbac** 
+  - `kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=<yourProfile@qlik.com> --dry-run -o=yaml > create_role_binding.yml`
+  - `kubectl apply -f create_role_binding.yml`
+  - `kubectl apply -f ./rbac-config.yaml`
 - **Prometheus** `helm install --name prometheus ./charts/prometheus/ -f ./values/prometheus/values-dev.yaml`
 - **Grafana** `helm install --name grafana ./charts/grafana`
 - **Custom Metrics Api Server** `helm install --name custom-metrics-apiserver ./charts/custom-metrics-apiserver`
