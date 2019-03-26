@@ -4,18 +4,18 @@ Helm charts and values for Qlik Core Scaling
 https://github.com/qlik-oss/core-scaling
 
 ### Installation
-- **Helm** https://helm.sh/docs/using_helm/#installing-the-helm-client
-- **Rbac** 
-  - `kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=<yourProfile@qlik.com> --dry-run -o=yaml > create_role_binding.yml`
-  - `kubectl apply -f create_role_binding.yml`
-  - `kubectl apply -f ./rbac-config.yaml`
-- **Prometheus** `helm install --name prometheus ./charts/prometheus/ -f ./values/prometheus/values-dev.yaml`
-- **Grafana** `helm install --name grafana ./charts/grafana`
-- **Custom Metrics Api Server** `helm install --name custom-metrics-apiserver ./charts/custom-metrics-apiserver`
-- **License Service**, add your Control and Serial Number in ./charts/license-service/values.yaml and then run `helm install --name license-service ./charts/license-service`
-- **Mira** `helm install --name mira ./charts/mira`
-- **Qix Session** `helm install --name qix-session ./charts/qix-session`
-- **Engine** `helm install --name engine ./charts/engine -f ./values/engine/values-dev.yaml`
+1. **Helm** https://helm.sh/docs/using_helm/#installing-the-helm-client
+1. **Rbac** 
+  1. `kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=<yourProfile@qlik.com> --dry-run -o=yaml > create_role_binding.yml`
+  1. `kubectl apply -f create_role_binding.yml`
+  1. `kubectl apply -f ./rbac-config.yaml`
+1. **Prometheus** `helm install --name prometheus ./charts/prometheus/ -f ./values/prometheus/values-dev.yaml`
+1. **Grafana** `helm install --name grafana ./charts/grafana`
+1. **Custom Metrics Api Server** `helm install --name custom-metrics-apiserver ./charts/custom-metrics-apiserver`
+1. **License Service**, add your Control and Serial Number in ./charts/license-service/values.yaml and then run `helm install --name license-service ./charts/license-service`
+1. **Mira** `helm install --name mira ./charts/mira`
+1. **Qix Session** `helm install --name qix-session ./charts/qix-session`
+1. **Engine** `helm install --name engine ./charts/engine -f ./values/engine/values-dev.yaml`
 
 ### Modifications
 - **Prometheus** `helm upgrade --install prometheus ./charts/prometheus -f ./values/prometheus/values-dev.yaml`
