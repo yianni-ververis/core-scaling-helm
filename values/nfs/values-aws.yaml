@@ -1,0 +1,6 @@
+  ## nfs
+## Default values: https://github.com/qlik-trial/qdt-helm/blob/master/charts/nfs/values.yaml
+
+persistence:
+  accessMode: ReadWriteMany
+  storageClass: "aws-efs"
