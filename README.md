@@ -16,6 +16,7 @@ https://github.com/qlik-oss/core-scaling
 - **Mira** `helm install --name mira ./charts/mira`
 - **Qix Session** `helm install --name qix-session ./charts/qix-session`
 - **Engine** `helm install --name engine ./charts/engine -f ./values/engine/values-dev.yaml`
+- **NFS Aws** `helm install --name nfs ./charts/nfs -f ./values/nfs/values-aws.yaml`
 
 ### Modifications
 - **Prometheus** `helm upgrade --install prometheus ./charts/prometheus -f ./values/prometheus/values-dev.yaml`
@@ -25,6 +26,7 @@ https://github.com/qlik-oss/core-scaling
 - **Mira** `helm upgrade --install mira ./charts/mira`
 - **Qix Session** `helm upgrade --install qix-session ./charts/qix-session`
 - **Engine** `helm upgrade --install engine ./charts/engine`
+- **NFS Aws** `helm upgrade --install nfs ./charts/nfs -f ./values/nfs/values-aws.yaml`
 
 ### Lint and check charts before installation
 - **Prometheus** `helm install --dry-run --debug ./charts/prometheus`
@@ -34,6 +36,7 @@ https://github.com/qlik-oss/core-scaling
 - **Mira** `helm install --dry-run --debug ./charts/mira`
 - **Qix Session** `helm install --dry-run --debug ./charts/qix-session`
 - **Engine** `helm install --dry-run --debug ./charts/engine`
+- **NFS Aws** `helm install --dry-run --debug ./charts/nfs -f ./values/nfs/values-aws.yaml`
 
 ### Delete
 - **Prometheus** `helm del --purge prometheus`
@@ -43,3 +46,4 @@ https://github.com/qlik-oss/core-scaling
 - **Mira** `helm del --purge mira`
 - **Qix Session** `helm del --purge qix-session`
 - **Engine** `helm del --purge engine`
+- **NFS Aws** `helm del --purge nfs`
