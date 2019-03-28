@@ -3,16 +3,23 @@
 Helm charts and values for Qlik Core Scaling
 https://github.com/qlik-oss/core-scaling
 
+### Prerequisites
+- Kubernetes 1.5 or newer cluster with RBAC (Role-Based Access Control) enabled is required
+- Helm 2.7.2 or newer or alternately the ability to modify RBAC rules is also required
+
+
 ### Installation
 - **Helm** https://helm.sh/docs/using_helm/#installing-the-helm-client
 - **Rbac** 
    - `kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=<yourProfile@qlik.com> --dry-run -o=yaml > create_role_binding.yml`
    - `kubectl apply -f create_role_binding.yml`
-   - `kubectl apply -f ./rbac-config.yaml`
+   - Add a ClusterRole for the Mira service, `kubectl apply -f ./rbac-config.yaml`
+   - Add a configmap with your license data, `kubectl create configmap license-data --from-literal LICENSES_SERIAL_NBR=YOUR-LICENSE-SERIAL-NBR --from-literal LICENSES_CONTROL_NBR=YOUR-LICENSE-CONTROL-NBR`
 - **Prometheus** `helm install --name prometheus ./charts/prometheus/ -f ./values/prometheus/values-dev.yaml`
 - **Grafana** `helm install --name grafana ./charts/grafana`
 - **Custom Metrics Api Server** `helm install --name custom-metrics-apiserver ./charts/custom-metrics-apiserver`
 - **License Service**, add your Control and Serial Number in ./charts/license-service/values.yaml and then run `helm install --name license-service ./charts/license-service`
+   - 
 - **Mira** `helm install --name mira ./charts/mira`
 - **Qix Session** `helm install --name qix-session ./charts/qix-session`
 - **Engine** `helm install --name engine ./charts/engine -f ./values/engine/values-dev.yaml`
