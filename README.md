@@ -4,11 +4,19 @@ Helm charts and values for Qlik Core Scaling
 https://github.com/qlik-oss/core-scaling
 
 ### Prerequisites
-- Kubernetes 1.5 or newer cluster with RBAC (Role-Based Access Control) enabled is required
+- Kubernetes 1.12.5 or newer cluster with RBAC (Role-Based Access Control) enabled is required
 - Helm 2.7.2 or newer or alternately the ability to modify RBAC rules is also required
 
+### Create a cluster in Google Cloud
+- Follow the instruction of the main repo, https://github.com/qlik-oss/core-scaling/blob/master/README.md#create-a-gke-cluster
 
-### Installation
+### Create a cluster in Azure
+- You can do it via the Azure portal as described here: https://community.qlik.com/t5/Qlik-Design-Blog/Azure-Kubernetes-Services-and-Qlik-Core/ba-p/1515128 or
+- From the Azure CLI, by following these steps
+1. Create the cluster, `az aks create -g my-resource-group -n name-of-my-cluster --location eastus --dns-name-prefix stage-aks --node-count 2 --node-vm-size Standard_DS2_v2s  --kubernetes-version 1.12.5`
+1. Sync to the cluster, `az aks get-credentials -g my-resource-group -n name-of-my-cluster`
+
+### Installation of Qlik Core Scaling
 - **Helm** https://helm.sh/docs/using_helm/#installing-the-helm-client
 - **Rbac** 
    - `kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=<yourProfile@qlik.com> --dry-run -o=yaml > create_role_binding.yml`
