@@ -11,10 +11,16 @@ image:
   env:
     - name: TZ
       value: "America/New_York"
-    - name: LICENSES_CONTROL_NBR
-      value: ""
     - name: LICENSES_SERIAL_NBR
-      value: ""
+      valueFrom:
+        secretKeyRef:
+          name: license-data
+          key: LICENSES_SERIAL_NBR
+    - name: LICENSES_CONTROL_NBR
+      valueFrom:
+        secretKeyRef:
+          name: license-data
+          key: LICENSES_CONTROL_NBR
 
 nameOverride: "license-service"
 fullnameOverride: "license-service"
