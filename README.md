@@ -19,7 +19,6 @@ https://github.com/qlik-oss/core-scaling
 - **Grafana** `helm install --name grafana ./charts/grafana`
 - **Custom Metrics Api Server** `helm install --name custom-metrics-apiserver ./charts/custom-metrics-apiserver`
 - **License Service**, add your Control and Serial Number in ./charts/license-service/values.yaml and then run `helm install --name license-service ./charts/license-service`
-   - 
 - **Mira** `helm install --name mira ./charts/mira`
 - **Qix Session** `helm install --name qix-session ./charts/qix-session`
 - **Engine** `helm install --name engine ./charts/engine -f ./values/engine/values-dev.yaml`
