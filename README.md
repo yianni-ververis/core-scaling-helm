@@ -23,9 +23,9 @@ https://github.com/qlik-oss/core-scaling
    - `kubectl apply -f create_role_binding.yml`
    - Add a ClusterRole for the Mira service, `kubectl apply -f ./rbac-config.yaml`
    - Add a secret with your license data, `kubectl create secret generic license-data --from-literal LICENSES_SERIAL_NBR=YOUR-LICENSE-SERIAL-NBR --from-literal LICENSES_CONTROL_NBR=YOUR-LICENSE-CONTROL-NBR`
-- **Prometheus** `helm install --name prometheus ./charts/prometheus/ -f ./values/prometheus/values-dev.yaml`
+- **Prometheus** `helm install --name prometheus ./charts/prometheus/ -f ./values/prometheus/dev.yaml`
 - **Grafana** `helm install --name grafana ./charts/grafana`
-- **Custom Metrics Api Server** `helm install --name custom-metrics-apiserver ./charts/custom-metrics-apiserver`
+- **Custom Metrics Api Server** `helm install custom-metrics-apiserver stable/prometheus-adapter -f ./values/custom-metrics-apiserver/dev.yaml`
 - **License Service**, add your Control and Serial Number in ./charts/license-service/values.yaml and then run `helm install --name license-service ./charts/license-service`
 - **Mira** `helm install --name mira ./charts/mira`
 - **Qix Session** `helm install --name qix-session ./charts/qix-session`

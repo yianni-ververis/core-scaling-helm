@@ -5,7 +5,7 @@ fullnameOverride: "engine"
 
 image:
   repository: qlikcore/engine
-  tag: 12.345.0
+  tag: 12.424.0
   pullPolicy: IfNotPresent
   env:
     - name: TZ

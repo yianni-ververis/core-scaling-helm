@@ -1,0 +1,11 @@
+image:
+  tag: v2.14.0
+  env:
+    - name: TZ
+      value: "America/New_York"
+
+resources:
+  requests:
+    memory: "500Mi"
+  limits:
+    memory: "500Mi"

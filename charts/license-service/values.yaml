@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: qlikcore/licenses
-  tag: 1.1.4
+  tag: 1.37.0
   pullPolicy: IfNotPresent
   env:
     - name: TZ
